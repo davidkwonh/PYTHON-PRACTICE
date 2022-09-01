@@ -37,3 +37,18 @@ if a - b:
 a == b
 
 #   boolean logic
+raining = True
+umbrella = False
+if not (raining or umbrella):
+    print ("stay inside")
+else:
+    print('big oops')
+
+#   same logic
+
+raining = True
+umbrella = False
+if not raining and not umbrella:
+    print ("stay inside")
+else:
+    print('big oops')
