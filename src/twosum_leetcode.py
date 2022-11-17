@@ -11,3 +11,16 @@ class Solution(object):
                     return [nums.index(i),nums.index(j)]
 
 print(Solution.twoSum(nums,target))
+
+
+
+
+
+x = 1
+i = 1
+for i in range(128):
+    x+=x
+    i+=i
+    print(x)
+
+print(x)
