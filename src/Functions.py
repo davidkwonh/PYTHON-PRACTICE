@@ -21,3 +21,4 @@ appendFour(randomlist)
 print(randomlist)
 
 print(print("woohoo")) # returns no value but returns None, has its own type
+
