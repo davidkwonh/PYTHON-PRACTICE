@@ -19,6 +19,7 @@ while datetime.now().second != wait_until:
 print(f'we are at {wait_until} seconds')
 
 while datetime.now().second != wait_until:
+    break
 
 while True:
     if datetime.now().second == wait_until:

@@ -76,8 +76,7 @@ def performOperation(num1, num2, operation='sum'):
     print(locals())
 
 
-performOperation(1, 2, operation='multiply')
-print(num1)
+
 
 print(globals())
 #   prints all global variables
@@ -149,4 +148,9 @@ function1(1, 2)
 
 #   Variables as functions
 
+x=5
 
+#   function as a var, same thing as treating a function as an object
+
+def x():
+    return 5
