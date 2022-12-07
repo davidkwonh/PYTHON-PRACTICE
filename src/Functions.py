@@ -154,3 +154,73 @@ x=5
 
 def x():
     return 5
+
+#   Text manipulation using functions
+
+text = '''
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
+'''
+
+#   makes the string lower case
+def lowercase(text):
+    return text.lower()
+
+#   makes the string without any punctuations
+def removePunctuation(text):
+    punctuations = ['.', '-', ',', '*']
+    for punctuation in punctuations:
+        text = text.replace(punctuation, '')
+    return text
+
+#   makes the string without a single new line
+def removeNewlines(text):
+    text = text.replace('\n', ' ')
+    return text
+
+#   removes words longer than three characters
+def removeShortWords(text):
+    return ' '.join([word for word in text.split() if len(word) > 3])
+
+#   removes words longer than 6 characters
+def removeLongWords(text):
+    return ' '.join([word for word in text.split() if len(word) < 6])
+
+
+#   creating an object processingFunctions that uses the functions as variables
+processingFunctions = [lowercase, removePunctuation, removeNewlines, removeLongWords]
+
+for func in processingFunctions:
+    text = func(text)
+
+print(text)
+
+#   Lambda functions
+#   one line functions and it is an implied return
+who = (lambda x: x + 3)(5)
+print(who)
+
+myList = [4,6,2,6,8,65,3]
+#   Lambda function called sorted()
+sorted(myList)
+
+myList = [{'num': 3}, {'num': 2}, {'num': 1}]
+sorted(myList, key=lambda x: x['num'])
+
