@@ -1,3 +1,5 @@
+import time
+
 def causeError():
     return 1/0
 
@@ -31,3 +33,77 @@ except Exception as e:
     print(type(e))
 
 #   Exceptions and Errors are just clasess, using try and except to catch the error
+
+
+#   Handling Exceptions and Errors
+
+def causeError():
+    try:
+        return 1 / 1
+    except Exception:
+        print('There was some sort of error!')
+
+    #   finally will always return what is in it no matter if the try is called or not
+    finally:
+        print('This will always execute!')
+
+causeError()
+
+
+#   common use of try and finally is to catch timing of runtime
+
+def causeError():
+    start = time.time()
+    try:
+        time.sleep(0.5)
+        return 1 / 0
+    except Exception:
+        print('There was some sort of error!')
+    finally:
+        print(f'Function took {time.time() - start} seconds to execute')
+
+#   different types of errors
+#   order of except statements matter
+def causeError():
+    try:
+        return 1 + 'a'
+
+    except TypeError:
+        print('There was a type error!')
+    except ZeroDivisionError:
+        print('There was a zero division error!')
+    except Exception:
+        print('There was some sort of error!')
+
+#   Creating a custom decorator to handle all different types of fucntions and their potential errors
+
+def handleException(func):
+    def wrapper(*args):
+        try:
+            func(*args)
+        except TypeError:
+            print('There was a type error!')
+        except ZeroDivisionError:
+            print('There was a zero division error!')
+        except Exception:
+            print('There was some sort of error!')
+    return wrapper
+
+@handleException
+def causeError():
+    return 1/0
+
+causeError()
+
+#   Raising Exceptions
+
+@handleException
+def raiseError(n):
+    if n == 0:
+        raise Exception()
+    print(n)
+
+
+raiseError(1)
+
+ 
