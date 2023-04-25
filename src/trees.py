@@ -7,15 +7,38 @@ class TreesNode:
         child.parent = self
         self.children.append(child)
 
-def build_product_tree():
-    root = TreesNode("electronics")
-    laptop = TreesNode('Laptop')
-    laptop.add_child("MAC")
+# Tree Practice
 
+# def build_product_tree():
+#     root = TreesNode("electronics")
+#     laptop = TreesNode('Laptop')
+#     laptop.add_child("MAC")
+#     root.add_child(laptop)
+#     return root
 
+# BFS implementation
+def bfs(V, adj)
+    bfs_traverse = []
+    vix = [False]*V
+    for i in range(V):
+        # check if visited
+        if (vix[i] == False):
+            q=[]
+            vix[i] = True
+            q.append(i)
+            # BFS starting from the ith node
+            while (len(q)>0):
+                g_node = q.pop(0)
 
-    root.add_child(laptop)
-    return root
+                bfs_traverse.append(g_node)
+                for it in adj[g_node]:
+                    if(vix[it]==False):
+                        vix[it] = True
+                        q.append(it)
+    return bfs_traverse
+
+def adjmat()
+
 
 
     if __name__ == '__main__':
